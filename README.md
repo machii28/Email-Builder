@@ -33,6 +33,6 @@ In the first layer, there are basic text controls such as setting the text to bo
 The second row offers options for setting the text type, like paragraph or heading.
 The last row includes options for creating ordered and unordered lists and setting the text alignment.
 
-![Screenshot 2024-08-16 at 12.27.05 AM.png](..%2F..%2F..%2F..%2Fvar%2Ffolders%2F9w%2Fd7r3k7l52cd6js1n7tn316hc0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_c4G6xR%2FScreenshot%202024-08-16%20at%2012.27.05%E2%80%AFAM.png)
+![Screenshot 2024-08-16 at 12 34 28 AM](https://github.com/user-attachments/assets/543a4b70-2401-46da-a21d-186d2d699a27)
 
 The app automatically creates a preview of the email template as you write. Once you are done with your template, you can click "Generate MJML" to download an .mjml file containing the converted HTML of your email template.
