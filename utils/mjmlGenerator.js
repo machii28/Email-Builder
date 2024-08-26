@@ -14,7 +14,7 @@ export function convertHtmlToMjml(htmlContent) {
     '</tr>': '</mj-text>',
     '<td>': '',
     '</td>': '',
-    '<p>': '<mj-text>',
+    '<p>': '<mj-text',
     '</p>': '</mj-text>',
     '<h1>': '<mj-text font-size="24px" font-weight="bold">',
     '</h1>': '</mj-text>',
