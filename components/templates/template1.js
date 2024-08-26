@@ -1,43 +1,94 @@
 export function getTemplate1(contents) {
   return `
-    <table role="presentation" style="width:100%;background-color:#007BFF;padding:20px 0;">
-        <tr>
-            <td style="text-align: center;">
-                <img src="http://placehold.it/200x50" alt="logo" style="width: 200px; margin: 5px auto;">
-            </td>
-        </tr>
-    </table>
-    
-    <table role="presentation" style="width:100%;background-color:#ffffff;padding:20px;margin:20px auto;">
-        <tr>
-            <td style="font-size:16px;color:#333333;font-family:Roboto, Arial, sans-serif;padding:20px;">
-                ${contents}
-            </td>
-        </tr>
-    </table>
+    <style>
+        .email-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .email-header {
+            background-color: #007BFF;
+            padding: 20px;
+            text-align: center;
+        }
+        .email-header img {
+            width: 200px;
+            margin: 5px auto;
+            display: block;
+        }
+        .email-body {
+            padding: 20px;
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.5;
+        }
+        .email-footer {
+            background-color: #445566;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .email-footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .email-footer a {
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .email-footer img {
+            width: 30px;
+        }
 
-    <table role="presentation" style="width:100%;background-color:#445566;padding:20px;margin-top:20px;">
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100%;
+                border-radius: 0;
+            }
+            .email-body {
+                padding: 15px;
+                font-size: 14px;
+            }
+            .email-footer {
+                padding: 15px;
+                font-size: 12px;
+            }
+            .email-footer img {
+                width: 25px;
+            }
+        }
+    </style>
+    <table role="presentation" class="email-container">
         <tr>
-            <td style="text-align:center;color:#ffffff;font-size:14px;">
-                Follow us on social media.
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center;padding:10px 0;">
-                <a href="https://facebook.com" style="font-size:15px;margin:0 10px;display:inline-block;text-decoration:none;color:#3b5998;">
-                    <img src="https://www.mailjet.com/images/theme/v1/icons/ico-social/facebook.png" alt="facebook" style="width:30px;">
-                </a>
-                <a href="https://twitter.com" style="font-size:15px;margin:0 10px;display:inline-block;text-decoration:none;color:#55acee;">
-                    <img src="https://www.mailjet.com/images/theme/v1/icons/ico-social/twitter.png" alt="twitter" style="width:30px;">
-                </a>
-                <a href="https://instagram.com" style="font-size:15px;margin:0 10px;display:inline-block;text-decoration:none;color:#e1306c;">
-                    <img src="https://www.mailjet.com/images/theme/v1/icons/ico-social/instagram.png" alt="instagram" style="width:30px;">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align:center;color:#ffffff;font-size:12px;padding-top:10px;">
-                © 2024 Your Company Name. All rights reserved.
+            <td>
+                <!-- Header -->
+                <div class="email-header">
+                    <img src="http://placehold.it/200x50" alt="logo">
+                </div>
+                <!-- Body -->
+                <div class="email-body">
+                    ${contents}
+                </div>
+                <!-- Footer -->
+                <div class="email-footer">
+                    <p>Follow us on social media.</p>
+                    <a href="https://facebook.com">
+                        <img src="https://www.mailjet.com/images/theme/v1/icons/ico-social/facebook.png" alt="facebook">
+                    </a>
+                    <a href="https://twitter.com">
+                        <img src="https://www.mailjet.com/images/theme/v1/icons/ico-social/twitter.png" alt="twitter">
+                    </a>
+                    <a href="https://instagram.com">
+                        <img src="https://www.mailjet.com/images/theme/v1/icons/ico-social/instagram.png" alt="instagram">
+                    </a>
+                    <p>© 2024 Your Company Name. All rights reserved.</p>
+                </div>
             </td>
         </tr>
     </table>

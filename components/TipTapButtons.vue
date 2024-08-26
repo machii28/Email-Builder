@@ -51,6 +51,11 @@
             @click="addImage"
             class="px-4 py-2 rounded disabled:opacity-50 border"
         >
+          <input style="display:none"
+                 ref="fileInput"
+                 aria-label="lorem ipsum"
+                 @change="onFileSelected"
+                 type="file" accept=".jpg, .jpeg, .png">
           <font-awesome-icon icon="fa-solid fa-image"/>
         </button>
         <button
@@ -171,15 +176,34 @@
 
 <script setup>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import { ref } from 'vue';
 
 const props = defineProps(['editor'])
+const fileInput = ref(null);
+
+const onFileSelected = (event) => {
+  const image = event.target.files[0];
+  const reader = new FileReader();
+  reader.readAsDataURL(image);
+  reader.onload = (e) => {
+    props.editor.commands.setImage({ src: e.target.result });
+    fileInput.value.value = '';
+  };
+};
+
+const onClick = () => {
+  fileInput.value.click();
+};
+
+const onKeyDown = (event) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    fileInput.value.click();
+  }
+};
 
 function addImage() {
-  const url = window.prompt('URL');
-
-  if (url) {
-    props.editor.chain().focus().setImage({src: url}).run()
-  }
+  fileInput.value.click();
 }
 
 function setLink() {

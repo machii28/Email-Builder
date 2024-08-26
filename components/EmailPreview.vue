@@ -6,10 +6,10 @@
 
     <div class="toolbar">
       <button @click="setDevice('desktop')" class="m-2">
-        <font-awesome-icon icon="fa-solid fa-desktop"></font-awesome-icon>
+        <font-awesome-icon :icon="faDesktop"></font-awesome-icon>
       </button>
       <button @click="setDevice('mobile')" class="m-2">
-        <font-awesome-icon icon="fa-solid fa-mobile"></font-awesome-icon>
+        <font-awesome-icon :icon="faMobile"></font-awesome-icon>
       </button>
     </div>
   </div>
@@ -18,6 +18,8 @@
 <script setup>
 import {ref, watch, onMounted} from 'vue';
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import { faMobile } from "@fortawesome/free-solid-svg-icons";
+import { faDesktop } from "@fortawesome/free-solid-svg-icons";
 
 const props = defineProps({
   previewContent: String
